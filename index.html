@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Srinivas Portfolio</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Dark Mode Toggle -->
+    <header>
+        <h1>Karan Srinivas</h1>
+        <p>Graduate Research Assistant | Software Engineer | Developer</p>
+        <menu>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#media">Media</a></li>
+            </ul>
+        </menu>
+        <!-- Dark Mode Toggle Switch (Icon) -->
+        <div class="theme-toggle">
+            <i id="toggle-theme" class="fas fa-moon" onclick="toggleTheme()"></i>
+        </div>
+    </header>
+
+    <!-- About Me Section with Education Table -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <summary>
+            I am Karan Srinivas, a highly motivated Graduate Research Assistant at Northeastern University. 
+            With a strong background in web development and software engineering, I am skilled in building robust and scalable applications. 
+            My expertise lies in technologies like React, Django, and database management.
+        </summary>
+        <table class="education-table">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Master of Science in Computer Software Engineering</td>
+                    <td>Northeastern University</td>
+                    <td>Expected Dec 2025</td>
+                </tr>
+                <tr>
+                    <td>Bachelor of Engineering in Computer Science & Engineering</td>
+                    <td>Nitte Meenakshi Institute of Technology</td>
+                    <td>Aug 2017 - Aug 2021</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <article>
+            <h3>Credit Card Cost Management</h3>
+            <p>Developed a credit card usage application using React.js and Django with real-time transaction alerts and secure user authentication.</p>
+        </article>
+        <article>
+            <h3>Student Review Management System</h3>
+            <p>Created a web application for gathering student feedback using Django and React, integrated with machine learning algorithms for data analysis.</p>
+        </article>
+    </section>
+
+    <!-- Skills Section with Images -->
+    <section id="skills" class="section">
+        <h2>Specialized in These Skills</h2>
+        <div class="skills-gallery">
+            <div class="skill-item">
+                <h3>Java</h3>
+                <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo">
+            </div>
+            <div class="skill-item">
+                <h3>Python</h3>
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Logo">
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript Logo">
+            </div>
+            <div class="skill-item">
+                <h3>React.js</h3>
+                <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React Logo">
+            </div>
+            <div class="skill-item">
+                <h3>SQL</h3>
+                <img src="https://cdn-icons-png.flaticon.com/512/2772/2772128.png" alt="SQL Logo">
+            </div>
+            <div class="skill-item">
+                <h3>HTML</h3>
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Icons -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <div class="contact-icons">
+            <a href="mailto:karans081198@gmail.com" class="contact-icon">
+                <i class="fas fa-envelope" style="color: #EA4335;"></i> Mail
+            </a>
+            <a href="tel:+8576934231" class="contact-icon">
+                <i class="fas fa-phone-alt" style="color: #25D366;"></i> Phone
+            </a>
+            <a href="https://www.linkedin.com/in/karans1" class="contact-icon" target="_blank">
+                <i class="fab fa-linkedin" style="color: #0077b5;"></i> LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="section">
+        <h2>Have a sneak peek at my daily routine</h2>
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/0lbzmZeS-BY" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Karan Srinivas | <a href="mailto:karans081198@gmail.com">Contact Me</a></p>
+    </footer>
+
+    <!-- Script for Dark/Light Mode -->
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('toggle-theme').classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                document.getElementById('toggle-theme').classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+        
+        window.onload = function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('toggle-theme').classList.replace('fa-moon', 'fa-sun');
+            }
+        };
+    </script>
+</body>
+</html>
